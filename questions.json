@@ -28,7 +28,7 @@
     {
       "id": 1,
       "type": "multiple_choice",
-      "question": "Tìm cân nặng trung bình của học sinh lớp 11D cho trong bảng số liệu ghép nhóm sau:\n\n| Cân nặng (kg) | Số học sinh |\n| :--- | :--- |\n| [40,5; 45,5) | 10 |\n| [45,5; 50,5) | 7 |\n| [50,5; 55,5) | 16 |\n| [55,5; 60,5) | 4 |\n| [60,5; 65,5) | 2 |\n| [65,5; 70,5) | 3 |\n\nSố trung bình của mẫu số liệu là:",
+      "question": "Tìm cân nặng trung bình của học sinh lớp 11D cho trong bảng số liệu ghép nhóm sau: Số trung bình của mẫu số liệu là:",
       "imageKey": "Q1",
       "options": [
         "42.",
