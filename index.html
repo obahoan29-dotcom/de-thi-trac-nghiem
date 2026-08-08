@@ -15,10 +15,6 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
     <style>
-        /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-           PHẦN NÀY ĐỂ ĐỊNH DẠNG HIỂN THỊ VÀ MÀU SẮC (CSS)
-           $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
-        
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
         body { background-color: #f0f4f8; color: #333; padding-bottom: 60px; -webkit-tap-highlight-color: transparent; }
 
@@ -83,7 +79,6 @@
             transition: transform 0.2s;
             border: 1px solid #eef2f5;
         }
-        /* Màu Nổi Khối Luân Phiên */
         .question-card:nth-child(3n+1) { border-top: 5px solid #ff0055; }
         .question-card:nth-child(3n+2) { border-top: 5px solid #7600ff; }
         .question-card:nth-child(3n+3) { border-top: 5px solid #00d4ff; }
@@ -123,14 +118,14 @@
         }
         .btn-submit:active { transform: scale(0.97); }
 
-        /* Hộp Kết Quả (Màu Xanh Lá) */
+        /* Hộp Kết Quả */
         .result-box {
             display: none; background: #d1fae5; border: 2px solid #10b981; color: #065f46;
             padding: 20px; border-radius: 12px; text-align: center; font-size: 1.3rem;
             font-weight: bold; margin-top: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* Bôi Màu Đáp Án Khi Đã Chấm Bài */
+        /* Bôi Màu Đáp Án */
         .correct-bg { background-color: #d1fae5 !important; border-color: #10b981 !important; color: #065f46; }
         .wrong-bg { background-color: #fee2e2 !important; border-color: #ef4444 !important; color: #991b1b; }
         .correct-text { color: #059669; font-weight: bold; margin-top: 8px; font-size: 0.9rem; }
@@ -138,7 +133,7 @@
 </head>
 <body>
 
-    <!-- Banner Siêu Nhân Nổi Bật -->
+    <!-- Banner Trang Web -->
     <div class="superhero-banner">
         <div class="banner-icon">🦸‍♂️⚡</div>
         <h1 id="banner-title">BÀI THI TRẮC NGHIỆM TOÁN</h1>
@@ -146,7 +141,7 @@
 
     <div class="container">
 
-        <!-- Mật Khẩu Bài Thi (Tự động ẩn nếu không đặt mật khẩu) -->
+        <!-- Mật Khẩu Bài Thi (Tự động ẩn nếu JSON không cài password) -->
         <div id="login-box" class="login-card" style="display: none;">
             <h3 style="margin-bottom: 10px; color: #7600ff;">🔒 Mật Khẩu Bài Thi</h3>
             <div class="input-group">
@@ -158,7 +153,6 @@
         <!-- Nội Dung Bài Thi -->
         <div id="quiz-content">
             
-            <!-- Khung Nhập Họ Tên Lớp -->
             <div class="info-card">
                 <div class="input-group">
                     <label>Họ và tên học sinh (*):</label>
@@ -170,42 +164,36 @@
                 </div>
             </div>
 
-            <!-- Thanh Thời Gian Đếm Lùi Trượt Theo Màn Hình -->
+            <!-- Thanh Thời Gian Đếm Lùi -->
             <div class="timer-sticky" id="timer-box" style="display: none;">
                 <span>⏱️ THỜI GIAN CÒN LẠI:</span>
                 <span id="timer-display">00:00</span>
             </div>
 
-            <!-- DANH SÁCH CÂU HỎI SẼ ĐƯỢC LOAD ĐỘNG TỪ JSON VÀO ĐÂY -->
+            <!-- DANH SÁCH CÂU HỎI LOAD ĐỘNG TỪ JSON -->
             <form id="quiz-form">
                 <div id="dynamic-questions-container">
                     <p style="text-align: center; color: #666; font-style: italic;">Đang tải dữ liệu đề thi...</p>
                 </div>
 
-                <!-- Nút Nộp Bài -->
                 <button type="button" class="btn-submit" onclick="submitExam()">NỘP BÀI KIỂM TRA</button>
             </form>
 
-            <!-- Hộp Kết Quả Hiện Ở Cuối Màn Hình -->
             <div id="result-box" class="result-box"></div>
 
         </div>
     </div>
 
-    <!-- <iframe> Ẩn để gửi dữ liệu ngầm về Google Forms mà không cần chuyển trang -->
+    <!-- <iframe> Ẩn gửi dữ liệu ngầm về Google Forms -->
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
     <script>
-        // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        // PHẦN 1: CẤU HÌNH HỆ THỐNG & GOOGLE FORMS
-        // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
+        // CẤU HÌNH NHẬN DỮ LIỆU TỪ JSON (MẶC ĐỊNH RỖNG)
         let EXAM_NAME = "ĐỀ THI TRẮC NGHIỆM";
-        const EXAM_PASSWORD = "0708"; // Mật khẩu bài thi (Để trống "" nếu cho vào tự do)
-        let TIME_LIMIT_MINUTES = 20;  // Thời gian làm bài (Phút) - Tự động đọc từ JSON nếu có
-        
-        const MAX_ATTEMPTS = "1"; 
-        const UNLIMITED_AFTER_MINS = 180; 
+        let EXAM_PASSWORD = ""; 
+        let TIME_LIMIT_MINUTES = "";  
+        let MAX_ATTEMPTS = ""; 
+        let UNLIMITED_AFTER_MINS = ""; 
 
         // CẤU HÌNH FORM GOOGLE SHEETS
         const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeWd4sU3jzaae6IDfiKHqW4M_VO-YRe2tH4CheygEChOgusZw/formResponse";
@@ -214,50 +202,60 @@
         const ENTRY_CLASS = "entry.2105621461";
         const ENTRY_DATA = "entry.962887554";
 
-        // Biến lưu đáp án động từ file JSON
         let ANSWER_KEY = {};
         let examData = null;
 
-        // Biến toàn cục theo dõi trạng thái
         let tabSwitchCount = 0;
         let timerInterval = null;
         let isSubmitted = false;
 
-        // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        // PHẦN 2: TRÌNH TẢI ĐỀ THI TỪ FILE QUESTIONS.JSON
-        // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
+        // TRÌNH TẢI ĐỀ THI VÀ CẤU HÌNH TỪ FILE JSON
         async function fetchExamQuestions() {
             try {
-                const response = await fetch('questions.json');
-                if (!response.ok) throw new Error("Không thể nạp file questions.json!");
+                // Đọc tên file đề từ đường link web (VD: index.html?de=de1.json), nếu không có thì mặc định nạp questions.json
+                const urlParams = new URLSearchParams(window.location.search);
+                const jsonFile = urlParams.get('de') || 'questions.json';
+
+                const response = await fetch(jsonFile);
+                if (!response.ok) throw new Error("Không thể nạp file " + jsonFile);
                 
                 examData = await response.json();
                 
+                // NẠP TẤT CẢ CẤU HÌNH TỪ FILE JSON VÀO HỆ THỐNG
                 if (examData.title) {
                     EXAM_NAME = examData.title;
                     document.getElementById("banner-title").innerText = EXAM_NAME;
                 }
-                if (examData.timeLimitMinutes) {
-                    TIME_LIMIT_MINUTES = examData.timeLimitMinutes;
+                if (examData.password !== undefined) EXAM_PASSWORD = examData.password;
+                if (examData.timeLimitMinutes !== undefined) TIME_LIMIT_MINUTES = examData.timeLimitMinutes;
+                if (examData.maxAttempts !== undefined) MAX_ATTEMPTS = examData.maxAttempts;
+                if (examData.unlimitedAfterMins !== undefined) UNLIMITED_AFTER_MINS = examData.unlimitedAfterMins;
+
+                // KIỂM TRA ĐIỀU KIỆN MẬT KHẨU VÀ GIỚI HẠN LẦN THI
+                checkAttemptLimits();
+                if (EXAM_PASSWORD !== "") {
+                    document.getElementById("login-box").style.display = "block";
+                    document.getElementById("quiz-content").style.display = "none";
+                } else {
+                    initExam();
                 }
 
-                renderQuestionsFromJSON(examData.questions);
+                renderQuestionsFromJSON(examData.questions, examData.images || {});
                 
-                // Gọi MathJax render công thức Toán sau khi nạp HTML thành công
                 if (window.MathJax && MathJax.typesetPromise) {
                     MathJax.typesetPromise();
                 }
             } catch (error) {
                 console.error("Lỗi:", error);
                 document.getElementById('dynamic-questions-container').innerHTML = 
-                    `<p style="color:red; text-align:center; font-weight:bold;">❌ Không thể tải file đề thi (questions.json). Vui lòng kiểm tra lại cấu trúc file!</p>`;
+                    `<p style="color:red; text-align:center; font-weight:bold;">❌ Không thể tải file dữ liệu đề thi! Vui lòng kiểm tra lại cấu trúc file .json</p>`;
             }
         }
 
-        function renderQuestionsFromJSON(questions) {
+        // DỰNG GIAO DIỆN CÂU HỎI TỪ JSON
+        function renderQuestionsFromJSON(questions, imageMap) {
             const container = document.getElementById('dynamic-questions-container');
-            container.innerHTML = ''; // Xóa nội dung chờ
+            container.innerHTML = ''; 
 
             let p1HTML = `<h2 style="margin: 20px 0 10px; color: #7600ff;">PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN</h2>`;
             let p2HTML = `<h2 style="margin: 25px 0 10px; color: #7600ff;">PHẦN II. CÂU TRẮC NGHIỆM ĐÚNG SAI</h2>`;
@@ -266,16 +264,20 @@
             let hasP1 = false, hasP2 = false, hasP3 = false;
 
             questions.forEach(q => {
-                // 1. Dạng Trắc Nghiệm ABCD
+                // Lấy đường dẫn ảnh từ imageKey hoặc imageUrl
+                const imgUrl = (q.imageKey && imageMap[q.imageKey]) ? imageMap[q.imageKey] : (q.imageUrl || "");
+                const imgTag = imgUrl ? `<img src="${imgUrl}" class="quiz-img">` : '';
+
+                // 1. Trắc Nghiệm ABCD
                 if (q.type === "multiple_choice") {
                     hasP1 = true;
                     const optionsLetters = ["A", "B", "C", "D"];
-                    ANSWER_KEY[`q${q.id}`] = optionsLetters[q.correct]; // Chuyển 0,1,2,3 -> A,B,C,D
+                    ANSWER_KEY[`q${q.id}`] = optionsLetters[q.correct];
 
                     p1HTML += `
                         <div class="question-card" id="q-box-${q.id}">
                             <div class="question-title">Câu ${q.id}: ${q.question}</div>
-                            ${q.imageUrl ? `<img src="${q.imageUrl}" class="quiz-img">` : ''}
+                            ${imgTag}
                             <div class="options-grid">
                                 ${q.options.map((opt, idx) => `
                                     <label class="option-item" onclick="playClickSound()">
@@ -287,7 +289,7 @@
                         </div>
                     `;
                 }
-                // 2. Dạng Đúng / Sai
+                // 2. Đúng / Sai
                 else if (q.type === "true_false") {
                     hasP2 = true;
                     let rowsHTML = "";
@@ -307,7 +309,7 @@
                     p2HTML += `
                         <div class="question-card" id="q-box-${q.id}">
                             <div class="question-title">Câu ${q.id}: ${q.question}</div>
-                            ${q.imageUrl ? `<img src="${q.imageUrl}" class="quiz-img">` : ''}
+                            ${imgTag}
                             <table class="tf-table">
                                 <thead>
                                     <tr><th>Mệnh đề</th><th width="50">Đúng</th><th width="50">Sai</th></tr>
@@ -318,7 +320,7 @@
                         </div>
                     `;
                 }
-                // 3. Dạng Trả Lời Ngắn
+                // 3. Trả Lời Ngắn
                 else if (q.type === "short_answer") {
                     hasP3 = true;
                     ANSWER_KEY[`q${q.id}`] = q.correctAnswer;
@@ -326,7 +328,7 @@
                     p3HTML += `
                         <div class="question-card" id="q-box-${q.id}">
                             <div class="question-title">Câu ${q.id}: ${q.question}</div>
-                            ${q.imageUrl ? `<img src="${q.imageUrl}" class="quiz-img">` : ''}
+                            ${imgTag}
                             <input type="text" class="short-answer-input" id="q${q.id}-input" placeholder="Nhập đáp số vào đây..." onfocus="playClickSound()">
                             <div class="correct-text" id="feedback-${q.id}"></div>
                         </div>
@@ -334,7 +336,6 @@
                 }
             });
 
-            // Ráp các phần vào giao diện chính
             let fullHTML = "";
             if (hasP1) fullHTML += p1HTML;
             if (hasP2) fullHTML += p2HTML;
@@ -343,21 +344,8 @@
             container.innerHTML = fullHTML;
         }
 
-        // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        // PHẦN 3: KÍCH HOẠT KHỞI ĐỘNG & KIỂM TRA MẬT KHẨU
-        // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
         window.onload = function() {
             fetchExamQuestions();
-            checkAttemptLimits();
-
-            if (EXAM_PASSWORD !== "") {
-                document.getElementById("login-box").style.display = "block";
-                document.getElementById("quiz-content").style.display = "none";
-            } else {
-                initExam();
-            }
-
             requestWakeLock();
         };
 
@@ -413,14 +401,10 @@
             let attempts = parseInt(localStorage.getItem("exam_attempts_count") || "0");
             localStorage.setItem("exam_attempts_count", attempts + 1);
 
-            if (TIME_LIMIT_MINUTES !== "") {
+            if (TIME_LIMIT_MINUTES !== "" && TIME_LIMIT_MINUTES > 0) {
                 startTimer(parseInt(TIME_LIMIT_MINUTES) * 60);
             }
         }
-
-        // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        // PHẦN 4: ÂM THANH & ĐỒNG HỒ ĐẾM LÙI
-        // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
         function playClickSound() {
             try {
@@ -488,10 +472,7 @@
             }, 1000);
         }
 
-        // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        // PHẦN 5: TÍNH ĐIỂM DỰA TRÊN DỮ LIỆU ĐỘNG VÀ GỬI ĐI
-        // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
+        // CHẤM ĐIỂM BÀI THI DỰA TRÊN CẤU HÌNH ĐỘNG
         function submitExam() {
             if (isSubmitted) return;
 
@@ -567,7 +548,6 @@
                     let userVal = inputEl ? inputEl.value.trim().replace('.', ',') : "";
                     let correctVal = ANSWER_KEY[`q${q.id}`];
 
-                    // So sánh cả dạng dấu phẩy và dấu chấm
                     let normUser = userVal.replace(',', '.');
                     let normCorr = correctVal.replace(',', '.');
 
@@ -581,7 +561,6 @@
                 }
             });
 
-            // Tính toán thang điểm 10
             let score10Scale = Math.round(((totalRawScore / maxTotalScore) * 10) * 10) / 10;
             let roundedRawScore = Math.round(totalRawScore * 100) / 100;
 
