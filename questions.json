@@ -20,7 +20,7 @@
   "images": {
     "Q1": "https://files.catbox.moe/ni1lk7.png",
     "Q2": "https://files.catbox.moe/ahtl4r.png",
-     "Q13": "https://files.catbox.moe/2oo018.png"
+    "Q13": "https://files.catbox.moe/2oo018.png"
   },
 
   "================= KHU VỰC DỰ LIỆU ĐỀ THI =================": "NỘI DUNG CÁC CÂU HỎI TRONG ĐỀ THI BÊN DƯỚI",
@@ -29,7 +29,7 @@
       "id": 1,
       "type": "multiple_choice",
       "question": "Tìm cân nặng trung bình của học sinh lớp 11D cho trong bảng số liệu ghép nhóm sau:\n\n| Cân nặng (kg) | Số học sinh |\n| :--- | :--- |\n| [40,5; 45,5) | 10 |\n| [45,5; 50,5) | 7 |\n| [50,5; 55,5) | 16 |\n| [55,5; 60,5) | 4 |\n| [60,5; 65,5) | 2 |\n| [65,5; 70,5) | 3 |\n\nSố trung bình của mẫu số liệu là:",
-      "imageKey": "",
+      "imageKey": "Q1",
       "options": [
         "42.",
         "50,5.",
@@ -43,7 +43,7 @@
       "id": 2,
       "type": "multiple_choice",
       "question": "Khảo sát thời gian tập thể dục của một số học sinh khối 11 thu được mẫu số liệu ghép nhóm sau:\n\n| Thời gian (phút) | Số học sinh |\n| :--- | :--- |\n| [0; 20) | 5 |\n| [20; 40) | 9 |\n| [40; 60) | 12 |\n| [60; 80) | 10 |\n| [80; 100) | 6 |\n\nMốt của mẫu số liệu trên là:",
-      "imageKey": "",
+      "imageKey": "Q2",
       "options": [
         "42.",
         "53.",
@@ -225,7 +225,7 @@
       "id": 13,
       "type": "short_answer",
       "question": "Một người ghi lại thời gian đàm thoại của một số cuộc gọi cho kết quả như bảng sau:\n\n| Thời gian t (phút) | Số cuộc gọi |\n| :--- | :--- |\n| $0 \\le t < 1$ | 8 |\n| $1 \\le t < 2$ | 17 |\n| $2 \\le t < 3$ | 25 |\n| $3 \\le t < 4$ | 20 |\n| $4 \\le t < 5$ | 10 |\n\nTìm khoảng tứ phân vị của mẫu số liệu ghép nhóm trên (lấy 2 số sau dấu phẩy).",
-      "imageKey": "",
+      "imageKey": "Q13",
       "correctAnswer": "1,79",
       "explanation": "Đáp án chính xác là 1,79."
     }
