@@ -1,0 +1,197 @@
+{
+  "title": "LUYỆN TẬP - HÀM SỐ, KHÔNG GIAN OXYZ, THỐNG KÊ",
+  "timeLimitMinutes": 45,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "question": "Tìm cân nặng trung bình của học sinh lớp 11D cho trong bảng số liệu ghép nhóm sau:\n\n| Cân nặng (kg) | Số học sinh |\n| :--- | :--- |\n| [40,5; 45,5) | 10 |\n| [45,5; 50,5) | 7 |\n| [50,5; 55,5) | 16 |\n| [55,5; 60,5) | 4 |\n| [60,5; 65,5) | 2 |\n| [65,5; 70,5) | 3 |\n\nSố trung bình của mẫu số liệu là:",
+      "options": [
+        "42.",
+        "50,5.",
+        "55.",
+        "51,81."
+      ],
+      "correct": 3,
+      "explanation": "Đáp án đúng là D."
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "question": "Khảo sát thời gian tập thể dục của một số học sinh khối 11 thu được mẫu số liệu ghép nhóm sau:\n\n| Thời gian (phút) | Số học sinh |\n| :--- | :--- |\n| [0; 20) | 5 |\n| [20; 40) | 9 |\n| [40; 60) | 12 |\n| [60; 80) | 10 |\n| [80; 100) | 6 |\n\nMốt của mẫu số liệu trên là:",
+      "options": [
+        "42.",
+        "53.",
+        "52.",
+        "54."
+      ],
+      "correct": 2,
+      "explanation": "Đáp án đúng là C."
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "question": "Thống kê về thời lượng mỗi trận đấu bi-a trong vòng tứ kết giải European Open người ta được mẫu số liệu ghép nhóm như sau:\n\n| Thời gian | Số trận |\n| :--- | :--- |\n| [9,5; 12,5) | 3 |\n| [12,5; 15,5) | 12 |\n| [15,5; 18,5) | 15 |\n| [18,5; 21,5) | 24 |\n| [21,5; 24,5) | 2 |\n\nSố trung vị của mẫu số liệu trên là:",
+      "options": [
+        "18.",
+        "18,1.",
+        "18,2.",
+        "18,3."
+      ],
+      "correct": 1,
+      "explanation": "Đáp án đúng là B."
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "question": "Kết quả điều tra tổng thu nhập trong năm 2024 của một số hộ gia đình ở thành phố Nha Trang được ghi lại ở bảng sau:\n\n| Tổng thu nhập (triệu đồng) | Số hộ gia đình |\n| :--- | :--- |\n| [200; 250) | 24 |\n| [250; 300) | 62 |\n| [300; 350) | 34 |\n| [350; 400) | 21 |\n| [400; 450) | 9 |\n\nTính khoảng biến thiên R của mẫu số liệu trên:",
+      "options": [
+        "200.",
+        "250.",
+        "300.",
+        "150."
+      ],
+      "correct": 1,
+      "explanation": "Đáp án đúng là B."
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "question": "Kết quả điều tra tổng thu nhập trong năm 2024 của một số hộ gia đình ở thành phố Nha Trang được ghi lại ở bảng sau:\n\n| Tổng thu nhập (triệu đồng) | Số hộ gia đình |\n| :--- | :--- |\n| [200; 250) | 24 |\n| [250; 300) | 62 |\n| [300; 350) | 34 |\n| [350; 400) | 21 |\n| [400; 450) | 9 |\n\nTứ phân vị $Q_1$ bằng:",
+      "options": [
+        "$\\frac{675}{62}$",
+        "$\\frac{9775}{31}$",
+        "$\\frac{16175}{62}$",
+        "$\\frac{16715}{62}$"
+      ],
+      "correct": 3,
+      "explanation": "Đáp án đúng là D."
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "question": "Khảo sát về cân nặng của các học sinh lớp 11D3 người ta được một mẫu dữ liệu ghép nhóm như sau:\n\n| Cân nặng | Số học sinh |\n| :--- | :--- |\n| [30; 40) | 2 |\n| [40; 50) | 10 |\n| [50; 60) | 16 |\n| [60; 70) | 8 |\n| [70; 80) | 2 |\n| [80; 90) | 2 |\n\nTứ phân vị thứ ba của mẫu số liệu trên là:",
+      "options": [
+        "60.",
+        "62,5.",
+        "65.",
+        "70."
+      ],
+      "correct": 1,
+      "explanation": "Đáp án đúng là B."
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "question": "Trong các số đặc trưng đo xu thế trung tâm dưới đây, số nào thỏa mãn có 75% giá trị trong mẫu số liệu nhỏ hơn nó và 25% giá trị trong mẫu số liệu lớn hơn nó?",
+      "options": [
+        "Số trung bình.",
+        "Trung vị.",
+        "Tứ phân vị thứ nhất.",
+        "Tứ phân vị thứ ba."
+      ],
+      "correct": 3,
+      "explanation": "Đáp án đúng là D."
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "question": "Sau một tháng gieo trồng một giống hoa, người ta thu được số liệu sau về chiều cao của các cây hoa được trồng:\n\n| Nhóm | Chiều cao | Số cây đạt được |\n| :--- | :--- | :--- |\n| 1 | Từ 100 đến 199 | 20 |\n| 2 | Từ 200 đến 299 | 75 |\n| 3 | Từ 300 đến 399 | 70 |\n| 4 | Từ 400 đến 499 | 25 |\n| 5 | Từ 500 đến 599 | 10 |\n\nPhương sai là:",
+      "options": [
+        "$s_{x}^{2}=9775$.",
+        "$s_{x}^{2}=9757$.",
+        "$s_{x}^{2}=9577$.",
+        "$s_{x}^{2}=7957$."
+      ],
+      "correct": 0,
+      "explanation": "Đáp án đúng là A."
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "question": "Bảng dưới đây thống kê số tập bài chấm điểm thi vào 10 môn Toán tại TP Hà Nội năm 2024 tại một tổ chấm:\n\n| Số tập bài | Tần số |\n| :--- | :--- |\n| [0; 3) | 1 |\n| [3; 6) | 2 |\n| [6; 9) | 4 |\n| [9; 12) | 11 |\n| [12; 15) | 7 |\n\nKhi đó độ lệch chuẩn của mẫu số liệu ghép nhóm trên là:",
+      "options": [
+        "3,14.",
+        "3,41.",
+        "4,31.",
+        "1,34."
+      ],
+      "correct": 0,
+      "explanation": "Đáp án đúng là A."
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "question": "Mỗi ngày bác Hương đều đi bộ để rèn luyện sức khỏe. Quãng đường đi bộ mỗi ngày của bác Hương trong 20 ngày được thống kê lại ở bảng sau:\n\n| Quãng đường (km) | Số ngày |\n| :--- | :--- |\n| [2,7; 3,0) | 3 |\n| [3,0; 3,3) | 6 |\n| [3,3; 3,6) | 5 |\n| [3,6; 3,9) | 4 |\n| [3,9; 4,2) | 2 |\n\nKhoảng tứ phân vị của mẫu số liệu ghép nhóm là:",
+      "options": [
+        "0,9.",
+        "0,975.",
+        "0,5.",
+        "0,575."
+      ],
+      "correct": 3,
+      "explanation": "Đáp án đúng là D."
+    },
+    {
+      "id": 11,
+      "type": "true_false",
+      "question": "Cho mẫu số liệu ghép nhóm cho bởi bảng sau:\n\n| Nhóm | Tần số |\n| :--- | :--- |\n| [20; 40) | 12 |\n| [40; 60) | 2 |\n| [60; 80) | 3 |\n| [80; 100) | 9 |",
+      "statements": [
+        {
+          "id": "a",
+          "statement": "Khoảng biến thiên của mẫu số liệu ghép nhóm là 40.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "statement": "Số trung bình của mẫu số liệu ghép nhóm là $\\frac{700}{13}$.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "statement": "Tứ phân vị thứ nhất của mẫu số liệu gốc thuộc nhóm [40; 60).",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "statement": "Khoảng tứ phân vị của mẫu số liệu ghép nhóm gần bằng $\\frac{985}{16}$.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "type": "true_false",
+      "question": "Thời gian hoàn thành một bài viết chính tả của một số học sinh lớp 4 hai trường X và Y được ghi lại ở bảng sau:\n\n| Thời gian (phút) | Số học sinh trường X | Số học sinh trường Y |\n| :--- | :--- | :--- |\n| [6; 7) | 8 | 4 |\n| [7; 8) | 10 | 12 |\n| [8; 9) | 13 | 17 |\n| [9; 10) | 10 | 14 |\n| [10; 11) | 9 | 3 |",
+      "statements": [
+        {
+          "id": "a",
+          "statement": "Nếu so sánh theo số trung bình thì học sinh trường Y viết nhanh hơn.",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "statement": "Nếu so sánh theo khoảng tứ phân vị thì học sinh trường Y có tốc độ viết đồng đều hơn.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "statement": "Phương sai của mẫu số liệu ghép nhóm của trường X là 1,08 và Phương sai của mẫu số liệu ghép nhóm của trường Y là 1,7584.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "statement": "Nếu so sánh theo độ lệch chuẩn thì học sinh trường Y có tốc độ viết đồng đều hơn.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": "short_answer",
+      "question": "Một người ghi lại thời gian đàm thoại của một số cuộc gọi cho kết quả như bảng sau:\n\n| Thời gian t (phút) | Số cuộc gọi |\n| :--- | :--- |\n| $0 \\le t < 1$ | 8 |\n| $1 \\le t < 2$ | 17 |\n| $2 \\le t < 3$ | 25 |\n| $3 \\le t < 4$ | 20 |\n| $4 \\le t < 5$ | 10 |\n\nTìm khoảng tứ phân vị của mẫu số liệu ghép nhóm trên (lấy 2 số sau dấu phẩy).",
+      "correctAnswer": "1,79",
+      "explanation": "Đáp án chính xác là 1,79."
+    }
+  ]
+}
